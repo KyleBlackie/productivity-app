@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { Component } from 'react';
+import Header from './components/Header';
+import AddActivity from './components/AddActivity';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
+class App extends Component {
 
-    </div>
-  );
+  state = {
+    activities: []
+  }
+
+  render(){
+    return (
+      <div className="App">
+        <Header />
+        <AddActivity />
+      </div>
+    );
+  }
 }
 
 export default App;
