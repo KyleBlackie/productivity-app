@@ -8,10 +8,21 @@ export class AddActivity extends Component {
         minutes: 0
     }
 
-    
+    //create an activity when submitted
+    onSubmit = (e) => {
+        e.preventDefault();
+        //pass state to new activity
+        this.props.addActivity(this.state.title, this.state.hours, this.state.minutes);
+        this.setState({
+            title: '',
+            hours: 0,
+            minutes: 0
+        });
+    }
+
     onChange = (e) => this.setState({[e.target.name]: e.target.value});
-    
-    //Change values for duration of activity to be added
+
+    //change values for duration of activity to be added
     
     increaseHours = (e) => {
         e.preventDefault();
@@ -30,14 +41,14 @@ export class AddActivity extends Component {
     increaseMinutes = (e) => {
         e.preventDefault();
         this.setState((state) => {
-            return state.minutes === 60 ? {minutes: 0} : {minutes: state.minutes + 1};
+            return state.minutes === 60 ? {minutes: 0} : {minutes: state.minutes + 15};
         });
     }
 
     decreaseMinutes = (e) => {
         e.preventDefault();
         this.setState((state) => {
-            return state.minutes === 0 ? {minutes: 0} : {minutes: state.minutes - 1};
+            return state.minutes === 0 ? {minutes: 0} : {minutes: state.minutes - 15};
         });
     }
 
@@ -45,7 +56,7 @@ export class AddActivity extends Component {
 
     render() {
         return (
-            <form>
+            <form onSubmit={this.onSubmit}>
                 <input
                     type="text"
                     name="title"
@@ -54,7 +65,6 @@ export class AddActivity extends Component {
                     value={this.state.title}
                     onChange={this.onChange}
                 />
-                <br/>
                 <div>
                     <h3>Hours</h3>
                     <button onClick={this.increaseHours}> + </button>
