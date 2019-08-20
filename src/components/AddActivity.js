@@ -41,14 +41,14 @@ export class AddActivity extends Component {
     increaseMinutes = (e) => {
         e.preventDefault();
         this.setState((state) => {
-            return state.minutes === 60 ? {minutes: 0} : {minutes: state.minutes + 15};
+            return state.minutes === 55 ? {minutes: 0} : {minutes: state.minutes + 5};
         });
     }
 
     decreaseMinutes = (e) => {
         e.preventDefault();
         this.setState((state) => {
-            return state.minutes === 0 ? {minutes: 0} : {minutes: state.minutes - 15};
+            return state.minutes === 0 ? {minutes: 0} : {minutes: state.minutes - 5};
         });
     }
 
@@ -56,12 +56,12 @@ export class AddActivity extends Component {
 
     render() {
         return (
-            <form onSubmit={this.onSubmit}>
+            <form onSubmit={this.onSubmit} style={formStyle}>
                 <input
                     type="text"
                     name="title"
-                    placeholder="Add Activity ..."
-                    style={{padding: '5px'}}
+                    placeholder="What do you need to work on today?"
+                    style={{padding: "10px", width: "40vw"}}
                     value={this.state.title}
                     onChange={this.onChange}
                 />
@@ -70,8 +70,7 @@ export class AddActivity extends Component {
                     <button onClick={this.increaseHours}> + </button>
                     <span> {this.state.hours} </span>
                     <button onClick={this.decreaseHours}> - </button>
-                </div>
-                <div>
+                
                     <h3>Minutes</h3>
                     <button onClick={this.increaseMinutes}> + </button>
                     <span> {this.state.minutes} </span>
@@ -79,12 +78,24 @@ export class AddActivity extends Component {
                 </div>
                 <input
                     type="submit" 
-                    value="Submit"                
+                    value="Submit"  
+                    style={{width: "25vw", padding: "5px", margin: "5px"}}              
                 />
             </form>             
             
         )
     }
 }
+
+const formStyle = {
+    display: "flex", 
+    flexDirection: "column", 
+    alignItems: "center",
+    textAlign: "center",
+    padding: "15px",
+    backgroundColor: "#1D3557",
+    color: "#F1FAEE"
+}
+
 
 export default AddActivity;

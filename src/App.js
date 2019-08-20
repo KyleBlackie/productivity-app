@@ -9,16 +9,7 @@ import uuid from 'uuid';
 class App extends Component {
 
   state = {
-    activities: [
-      {
-        id: 0,
-        title: "haha good title",
-        hours: 1,
-        minutes: 1,
-        seconds: 0,
-        countdown: true
-      }
-    ]
+    activities: []
   }
   
   // countdown start / stop functions
