@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/productivity-app/static/css/main.32be136d.chunk.css",
-    "main.js": "/productivity-app/static/js/main.d500b038.chunk.js",
-    "main.js.map": "/productivity-app/static/js/main.d500b038.chunk.js.map",
+    "main.js": "/productivity-app/static/js/main.66eef9d4.chunk.js",
+    "main.js.map": "/productivity-app/static/js/main.66eef9d4.chunk.js.map",
     "runtime~main.js": "/productivity-app/static/js/runtime~main.5d568d19.js",
     "runtime~main.js.map": "/productivity-app/static/js/runtime~main.5d568d19.js.map",
     "static/js/2.e2d88e5a.chunk.js": "/productivity-app/static/js/2.e2d88e5a.chunk.js",
     "static/js/2.e2d88e5a.chunk.js.map": "/productivity-app/static/js/2.e2d88e5a.chunk.js.map",
     "index.html": "/productivity-app/index.html",
-    "precache-manifest.8e9642d9dcaa3af5ef2766074527cbbd.js": "/productivity-app/precache-manifest.8e9642d9dcaa3af5ef2766074527cbbd.js",
+    "precache-manifest.d352472ea30cf3e4042228daf44710ee.js": "/productivity-app/precache-manifest.d352472ea30cf3e4042228daf44710ee.js",
     "service-worker.js": "/productivity-app/service-worker.js",
     "static/css/main.32be136d.chunk.css.map": "/productivity-app/static/css/main.32be136d.chunk.css.map"
   }
