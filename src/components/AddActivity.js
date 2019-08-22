@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types';
 
 export class AddActivity extends Component {
     
@@ -52,34 +53,32 @@ export class AddActivity extends Component {
         });
     }
 
-
-
     render() {
         return (
             <form onSubmit={this.onSubmit} style={formStyle}>
                 <input
-                    type="text"
-                    name="title"
-                    placeholder="What do you need to work on today?"
-                    style={{padding: "10px", width: "40vw"}}
+                    type='text'
+                    name='title'
+                    placeholder={width > 768 ? 'What do you need to work on today?':'Add Activity ...'}
+                    style={{padding: '10px', marginBottom: '10px', width: '40vw'}}
                     value={this.state.title}
                     onChange={this.onChange}
                 />
                 <div>
                     <h3>Hours</h3>
-                    <button onClick={this.increaseHours}> + </button>
+                    <button onClick={this.increaseHours} style={incrementButtonStyle}> + </button>
                     <span> {this.state.hours} </span>
-                    <button onClick={this.decreaseHours}> - </button>
+                    <button onClick={this.decreaseHours} style={incrementButtonStyle}> - </button>
                 
                     <h3>Minutes</h3>
-                    <button onClick={this.increaseMinutes}> + </button>
+                    <button onClick={this.increaseMinutes} style={incrementButtonStyle}> + </button>
                     <span> {this.state.minutes} </span>
-                    <button onClick={this.decreaseMinutes}> - </button>
+                    <button onClick={this.decreaseMinutes} style={incrementButtonStyle}> - </button>
                 </div>
                 <input
                     type="submit" 
                     value="Submit"  
-                    style={{width: "25vw", padding: "5px", margin: "5px"}}              
+                    style={{width: '25vw', padding: '5px', marginTop: '15px'}}              
                 />
             </form>             
             
@@ -87,14 +86,31 @@ export class AddActivity extends Component {
     }
 }
 
+// styling
+
 const formStyle = {
-    display: "flex", 
-    flexDirection: "column", 
-    alignItems: "center",
-    textAlign: "center",
-    padding: "15px",
-    backgroundColor: "#1D3557",
-    color: "#F1FAEE"
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center',
+    textAlign: 'center',
+    padding: '15px',
+    backgroundColor: '#1D3557',
+    color: '#F1FAEE'
+}
+
+const incrementButtonStyle = {
+    padding: '3px 5px',
+    margin: '2px 2px',
+    display: 'inline-block',
+    //border: 'none',
+}
+
+// variable for title placeholder value
+let width = window.innerWidth
+
+// prop types
+AddActivity.propTypes = {
+    addActivity: PropTypes.func.isRequired
 }
 
 

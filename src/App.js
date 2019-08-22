@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import AddActivity from './components/AddActivity';
 import Activities from './components/Activities';
+import Reset from './components/Reset';
 import './App.css';
 import uuid from 'uuid';
 
@@ -25,35 +26,34 @@ class App extends Component {
   }
 
   tick(){
+    // create copy of activities and update new times for all activities with setState
     let activitiesCopy = JSON.parse(JSON.stringify(this.state.activities));
 
-    // should change this to a high order function if possible
-    for(let i = 0; i < activitiesCopy.length; i++) {
-      let { hours, minutes, seconds, countdown} = activitiesCopy[i];
-      if(countdown){
-        if(seconds === 0){
-          if(minutes === 0){
-            if(hours === 0){
-              // timer complete
-              activitiesCopy[i].countdown = false;
-            }else {
-              activitiesCopy[i].hours--;
-              activitiesCopy[i].minutes = 59;
-              activitiesCopy[i].seconds = 59;
-            }
-          }else{
-            activitiesCopy[i].minutes--;
-            activitiesCopy[i].seconds = 59;
-          }
-        }else {
-          activitiesCopy[i].seconds--;
-        }
-      }
-      
-    }
-
     this.setState({
-      activities: activitiesCopy
+      activities: activitiesCopy.map(activity => {
+        // grab variables needed from the activity
+        let { hours, minutes, seconds, countdown} = activity;
+        if(countdown){
+          if(seconds === 0){
+            if(minutes === 0){
+              if(hours === 0){
+                // timer complete
+                activity.countdown = false;
+              }else {
+                activity.hours--;
+                activity.minutes = 59;
+                activity.seconds = 59;
+              }
+            }else{
+              activity.minutes--;
+              activity.seconds = 59;
+            }
+          }else {
+            activity.seconds--;
+          }
+        }
+        return activity;
+      })
     });
   }
 
@@ -77,7 +77,8 @@ class App extends Component {
       title,
       hours,
       minutes,
-      seconds: 0
+      seconds: 0,
+      originalTime: {hours: hours, minutes: minutes}
     }
     this.setState({
       activities: [...this.state.activities, newActivity]
@@ -91,6 +92,19 @@ class App extends Component {
     });
   }
 
+  // reset activities timers
+  resetActivities = () => {
+    this.setState({
+      activities: this.state.activities.map(activity => {
+        activity.hours = activity.originalTime.hours;
+        activity.minutes = activity.originalTime.minutes;
+        activity.seconds = 0;
+        activity.countdown = false;
+        return activity;
+      })
+    });
+  }
+
   
 
   render(){
@@ -98,6 +112,7 @@ class App extends Component {
       <div className="App">
         <Header />
         <AddActivity addActivity={this.addActivity}/>
+        <Reset resetActivities={this.resetActivities}/>
         <Activities activities={this.state.activities}
         delActivity={this.delActivity} toggleCountdown={this.toggleCountdown}/>
       </div>
