@@ -4,7 +4,7 @@ A react app made to help concentrate time spent on certain activities throughout
 What I learned from this project:
 
 JavaScript:
-- learned basic syntax
+- learned general syntax
 - ES6
 
 React:
