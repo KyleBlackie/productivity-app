@@ -15,3 +15,5 @@ React:
 - states and props in react
 - css styling with react 
 - JSX
+
+![Imgur](https://i.imgur.com/ZHKEKWT.jpg)
