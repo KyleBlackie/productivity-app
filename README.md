@@ -14,3 +14,4 @@ React:
 - component lifecycles
 - states and props in react
 - css styling with react 
+- JSX
