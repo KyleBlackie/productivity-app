@@ -3,6 +3,7 @@ A react app made to help concentrate time spent on certain activities throughout
 
 View in browser here: https://kyleblackie.github.io/productivity-app/
 
+
 What I learned from this project:
 
 JavaScript:
