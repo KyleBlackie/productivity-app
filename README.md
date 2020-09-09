@@ -1,5 +1,5 @@
 # productivity-app
-A react app made to help concentrate time spent on certain activities throughout the day
+A React app made to help concentrate time spent on certain activities throughout the day
 
 View in browser here: https://kyleblackie.github.io/productivity-app/
 
