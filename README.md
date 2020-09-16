@@ -1,6 +1,8 @@
 # productivity-app
 A React app made to help concentrate time spent on certain activities throughout the day
 
+View in browser here: https://kyleblackie.github.io/productivity-app/
+
 What I learned:
 
 JavaScript:
@@ -13,7 +15,5 @@ React:
 - component lifecycles
 - css styling with react 
 - JSX
-
-View in browser here: https://kyleblackie.github.io/productivity-app/
 
 ![Imgur](https://i.imgur.com/ZHKEKWT.jpg)
