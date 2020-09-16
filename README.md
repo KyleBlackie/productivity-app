@@ -2,18 +2,16 @@
 A React app made to help concentrate time spent on certain activities throughout the day
 
 View in browser here: https://kyleblackie.github.io/productivity-app/
-
 <br>
-What I learned from this project:
-
+What I learned:
 JavaScript:
 - learned general syntax
 - ES6
 
 React:
-- importance of components in development
+- how to use states and props in react
+- importance of components in front-end development
 - component lifecycles
-- states and props in react
 - css styling with react 
 - JSX
 
