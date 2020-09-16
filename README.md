@@ -2,7 +2,7 @@
 A React app made to help concentrate time spent on certain activities throughout the day
 
 View in browser here: https://kyleblackie.github.io/productivity-app/
-<br>
+
 What I learned:
 JavaScript:
 - learned general syntax
