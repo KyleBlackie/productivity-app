@@ -6,7 +6,7 @@ View in browser here: https://kyleblackie.github.io/productivity-app/
 What I learned:
 
 JavaScript:
-- learned general syntax
+- -learned general syntax
 - ES6
 
 React:
